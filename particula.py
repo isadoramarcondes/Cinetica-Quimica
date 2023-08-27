@@ -30,7 +30,6 @@ class Particula:
         self.travel.append(np.copy(self.velocidade)) 
         self.travel_mag.append(np.linalg.norm(np.copy(self.velocidade))) 
         
-
     def checar_col(self, particula):
         """Checa se houve colisão com alguma partícula"""
         
