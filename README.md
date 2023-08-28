@@ -14,3 +14,5 @@
       </figure>
     </td>
 </table>
+
+![distribuicoes](https://github.com/isadoramarcondes/Cinetica-Quimica/assets/106620307/e1713dcd-5454-43ff-ab95-6cc2462a803b)
