@@ -24,7 +24,7 @@ class Particula:
         self.travel_mag = [np.linalg.norm(np.copy(self.velocidade))]
         
     def update(self, step):
-        """Compute position of next step."""
+        """Calcula a posição seguinte com base na velocidade"""
         self.pos += step * self.velocidade
         self.trapos.append(np.copy(self.pos)) 
         self.travel.append(np.copy(self.velocidade)) 
