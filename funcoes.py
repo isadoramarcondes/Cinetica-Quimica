@@ -17,7 +17,7 @@ def step(particulas, step, tamanho):
         particula.update(step)
         
         
-def lista_inicial(N, raio, massa, tamanho_caixa):
+def lista_inicial(N, raio, massa, tamanho_caixa, reatividade):
     """Gerar uma lista de partículas inicial"""
     particulas = []
 
@@ -32,7 +32,7 @@ def lista_inicial(N, raio, massa, tamanho_caixa):
             
             colisao = False
             pos = raio + np.random.rand(2)*(tamanho_caixa-2*raio) 
-            nova_particula = Particula(pos, v, raio, massa)
+            nova_particula = Particula(pos, v, raio, massa, reatividade)
             for j in range(len(particulas)):
 
                 colisao = nova_particula.checar_col(particulas[j] )
