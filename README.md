@@ -30,3 +30,17 @@
     </td>
 </table>
 
+<table>
+  <tr>
+    <td>
+      <figure>
+        <img src="https://github.com/isadoramarcondes/Cinetica-Quimica/blob/main/resultados/prob_react.png" width=380 height=380 alt="Imagem 1">
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="https://github.com/isadoramarcondes/Cinetica-Quimica/blob/main/resultados/coef_react.png" width=420 height=380 alt="Imagem 2">
+      </figure>
+    </td>
+</table>
+
