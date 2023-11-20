@@ -1,6 +1,7 @@
 import numpy as np
 import random as rd
-from particula import Particula
+from particula import Particula, Particula2, Particula3
+
 
 def step(particulas, step, tamanho):
     """Calcula um passo da simulação para cada partícula"""
@@ -33,6 +34,60 @@ def lista_inicial(N, raio, massa, tamanho_caixa, reatividade):
             colisao = False
             pos = raio + np.random.rand(2)*(tamanho_caixa-2*raio) 
             nova_particula = Particula(pos, v, raio, massa, reatividade)
+            for j in range(len(particulas)):
+
+                colisao = nova_particula.checar_col(particulas[j] )
+
+                if colisao == True:
+                    break
+
+        particulas.append(nova_particula)
+    return particulas
+
+def lista_inicial2(N, raio, massa, tamanho_caixa, reatividade, catalise):
+    """Gerar uma lista de partículas inicial
+    Para a simulação com catalise"""
+    particulas = []
+
+    for i in range(N):
+        
+        v_mag = np.random.rand(1)*20
+        v_ang = np.random.rand(1)*2*np.pi
+        v = np.append(v_mag*np.cos(v_ang), v_mag*np.sin(v_ang))
+        
+        colisao = True
+        while(colisao == True):
+            
+            colisao = False
+            pos = raio + np.random.rand(2)*(tamanho_caixa-2*raio) 
+            nova_particula = Particula2(pos, v, raio, massa, reatividade, catalise = catalise)
+            for j in range(len(particulas)):
+
+                colisao = nova_particula.checar_col(particulas[j] )
+
+                if colisao == True:
+                    break
+
+        particulas.append(nova_particula)
+    return particulas
+
+def lista_inicial3(N, raio, massa, tamanho_caixa, reatividade, catalise):
+    """Gerar uma lista de partículas inicial
+    Para a simulação com catalise"""
+    particulas = []
+
+    for i in range(N):
+        
+        v_mag = np.random.rand(1)*20
+        v_ang = np.random.rand(1)*2*np.pi
+        v = np.append(v_mag*np.cos(v_ang), v_mag*np.sin(v_ang))
+        
+        colisao = True
+        while(colisao == True):
+            
+            colisao = False
+            pos = raio + np.random.rand(2)*(tamanho_caixa-2*raio) 
+            nova_particula = Particula3(pos, v, raio, massa, reatividade, catalise = catalise)
             for j in range(len(particulas)):
 
                 colisao = nova_particula.checar_col(particulas[j] )
