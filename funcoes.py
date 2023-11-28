@@ -97,3 +97,31 @@ def lista_inicial3(N, raio, massa, tamanho_caixa, reatividade, catalise):
 
         particulas.append(nova_particula)
     return particulas
+
+
+def lista_inicial4(N, raio, massa, tamanho_caixa, reatividade, catalise, vmedia = 10.):
+    """Gerar uma lista de partículas inicial
+    Para a simulação com catalise"""
+    particulas = []
+
+    for i in range(N):
+        
+        v_mag = rd.uniform(vmedia -1, vmedia + 1)
+        v_ang = np.random.rand(1)*2*np.pi
+        v = np.append(v_mag*np.cos(v_ang), v_mag*np.sin(v_ang))
+        
+        colisao = True
+        while(colisao == True):
+            
+            colisao = False
+            pos = raio + np.random.rand(2)*(tamanho_caixa-2*raio) 
+            nova_particula = Particula2(pos, v, raio, massa, reatividade, catalise = catalise)
+            for j in range(len(particulas)):
+
+                colisao = nova_particula.checar_col(particulas[j] )
+
+                if colisao == True:
+                    break
+
+        particulas.append(nova_particula)
+    return particulas
